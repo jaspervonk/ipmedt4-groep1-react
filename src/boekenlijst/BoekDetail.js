@@ -49,6 +49,9 @@ class BoekDetail extends React.Component {
         });
 
         //informatie ophalen van gelezen hoofdstukken
+        //de Timeout is erin gezet, om de database tijd te geven alles in te laden
+        //de code is getest op een offline database, daar werkt het wel
+        //dit was te zien in zowel de live demo tijdens de presentaties, als in de demovideo van de website
         var GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
         axios.get(GELEZEN_URL).then(res =>{
             this.setState({
