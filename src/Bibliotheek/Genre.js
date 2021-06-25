@@ -11,7 +11,7 @@ class Genre extends React.Component{
         genres: []
     }
     componentDidMount() {
-        axios.get(`http://127.0.0.1:8000/api/bibliotheek/choose/genre`)
+        axios.get(`https://warm-escarpment-39872.herokuapp.com/api/bibliotheek/choose/genre`)
           .then(res => {
             const genres = res.data;
             this.setState({ genres });

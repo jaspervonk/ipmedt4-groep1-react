@@ -32,7 +32,7 @@ class Gefeliciteerd extends React.Component{
 
   componentDidMount() {
       //haalt de puzzel op en daarbij het aantal muntjes die je kan verdienen
-      const BASE_URL = 'http://127.0.0.1:8000/api/puzzel/'
+    const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzel/'
       let puzzelId = window.location.pathname.split('/')[2];
       if(puzzelId === ""){
         window.location.replace("/");
@@ -48,7 +48,7 @@ class Gefeliciteerd extends React.Component{
                   medaille: res.data.medaille_id
                 })
                 //haalt de medaille op die je bij deze puzzel eventueel kan verdienen
-                const MEDAILLE_URL = 'http://127.0.0.1:8000/api/medaille/' + this.state.medaille
+                const MEDAILLE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/medaille/' + this.state.medaille
                 axios.get(MEDAILLE_URL)
                   .then(res => {
                     //als er een medaille is gevonden bij de uitdaging, laat dan de melding zien dat de gebruiker deze heeft gekregen
@@ -72,10 +72,10 @@ class Gefeliciteerd extends React.Component{
   //redirect als gebruiker op knop drukt en voegt de muntjes toe aan gebruiker en geeft eventuele medailles
   redirect = () => {
     if(this.state.medaille){
-      var VERDIEN_URL = 'http://127.0.0.1:8000/api/verdienmedaille/' + this.props.user_id + "/" + this.state.medaille_id
+      var VERDIEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/verdienmedaille/' + this.props.user_id + "/" + this.state.medaille_id
       axios.post(VERDIEN_URL);
     }
-    var URL = 'http://127.0.0.1:8000/api/puzzelklaar/' + this.props.user_id + "/" + this.state.muntjes;
+    var URL = 'https://warm-escarpment-39872.herokuapp.com/api/puzzelklaar/' + this.props.user_id + "/" + this.state.muntjes;
     axios.patch(URL)
     window.location.replace("/");
   }

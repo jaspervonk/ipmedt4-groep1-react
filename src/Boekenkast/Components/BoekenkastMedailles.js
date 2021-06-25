@@ -17,7 +17,7 @@ class BoekenkastMedailles extends React.Component{
 
   updateMedaille = (slot, medaille_id) => {
     this.togglePopup(slot);
-    const BASE_URL = "http://localhost:8000/api/boekenkast/update/medaille/";
+    const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/boekenkast/update/medaille/";
     axios.put(BASE_URL +  this.props.user_id, {"slot": slot, "medaille_id": medaille_id, _method: 'patch'})
       .then(res => {
         this.props.refreshBoekenkast();

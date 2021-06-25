@@ -11,7 +11,7 @@ class Favoriet extends React.Component{
     }
 
     addToFavorites = (props) =>{
-        axios.post('http://127.0.0.1:8000/api/bibliotheek/favorite/' + this.props.boek_id, {"id": this.props.boek_id})
+        axios.post('https://warm-escarpment-39872.herokuapp.com/api/bibliotheek/favorite/' + this.props.boek_id, {"id": this.props.boek_id})
           .then(res => {  
             const favorite = res.data.favorieten;
             console.log(favorite);
@@ -20,7 +20,7 @@ class Favoriet extends React.Component{
     };
 
     DeleteFromFavorites = (props) =>{
-        axios.delete('http://127.0.0.1:8000/api/bibliotheek/favorite/delete/' + this.props.boek_id, {"id": this.props.boek_id})
+        axios.delete('https://warm-escarpment-39872.herokuapp.com/api/bibliotheek/favorite/delete/' + this.props.boek_id, {"id": this.props.boek_id})
         .then(res => {  
             console.log(res.data);
             const favorite = res.data.favorieten;

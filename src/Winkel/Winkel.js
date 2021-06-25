@@ -21,7 +21,7 @@ class Winkel extends React.Component {
     }
 
     componentDidMount = () => {
-        const BASE_URL = "http://localhost:8000/api/winkel/";
+        const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/";
         axios.get(BASE_URL + this.props.user_id).then(res => {
             let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
             this.setState({allItems: res.data.items,
@@ -35,7 +35,7 @@ class Winkel extends React.Component {
     };
 
     refreshWinkel = () => {
-      const BASE_URL = "http://localhost:8000/api/winkel/";
+        const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/";
       axios.get(BASE_URL + this.props.user_id).then(res => {
           let behaalde_items = res.data.behaalde_items.filter(obj => obj.user_id == this.props.user_id);
           this.setState({allItems: res.data.items,
@@ -49,7 +49,7 @@ class Winkel extends React.Component {
     }
 
     updateColor = (item_id, user_id) => {
-        const BASE_URL = "http://localhost:8000/api/winkel/update/color/";
+        const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/update/color/";
         axios.put(BASE_URL + user_id, {"item_id": item_id, _method: 'patch'})
             .then(res => {
         });
@@ -58,7 +58,7 @@ class Winkel extends React.Component {
     }
 
     koopItem = (item_id, user_id, item_prijs) => {
-        const BASE_URL = "http://localhost:8000/api/winkel/koop/item/";
+        const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/winkel/koop/item/";
         axios.post(BASE_URL + user_id, {"item_id": item_id, "item_prijs": item_prijs})
             .then(res => {
         });

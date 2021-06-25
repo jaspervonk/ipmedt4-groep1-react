@@ -25,7 +25,7 @@ class BoekDetail extends React.Component {
 
     //informatie ophalen voor boek details
     componentDidMount() {
-        const BASE_URL = 'http://127.0.0.1:8000/api/boekenlijst/detail/';
+        const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/detail/';
         let boekId = window.location.pathname.split('/')[3];
         axios.get(BASE_URL + boekId).then(res =>{
             this.setState({
@@ -37,7 +37,7 @@ class BoekDetail extends React.Component {
         });
 
         //informatie ophalen van hoofdstukken en uitdagingen
-        var HOOFDSTUK_URL = 'http://127.0.0.1:8000/api/hoofdstukken/' + boekId;
+        var HOOFDSTUK_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/' + boekId;
         axios.get(HOOFDSTUK_URL).then(res =>{
             if(res.data){
                 this.setState({
@@ -49,7 +49,7 @@ class BoekDetail extends React.Component {
         });
 
         //informatie ophalen van gelezen hoofdstukken
-        var GELEZEN_URL = 'http://127.0.0.1:8000/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
+        var GELEZEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + '/' + this.props.user_id;
         axios.get(GELEZEN_URL).then(res =>{
             this.setState({
                 gelezenHoofdstukken: res.data.gelezenHoofdstukken,
@@ -70,7 +70,7 @@ class BoekDetail extends React.Component {
     //afvinken van hoofdstuk update de gelezen_hoofdstukken table
     cardClicked = id => {
         let boekId = window.location.pathname.split('/')[3];
-        var AFVINKEN_URL = 'http://127.0.0.1:8000/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
+        var AFVINKEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
 
         //check=true, is toevoegen, check=false, is verwijderen
         //gelezenHoofdstukkenTeller wordt geupdate bij elke checkbox die aangeklikt wordt
@@ -95,7 +95,7 @@ class BoekDetail extends React.Component {
 
     //verwijder boek in database
     verwijderBoek = id => {
-        var VERWIJDER_URL = 'http://127.0.0.1:8000/api/boekenlijst/delete/' + id + "/" + this.props.user_id;
+        var VERWIJDER_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/delete/' + id + "/" + this.props.user_id;
         axios.delete(VERWIJDER_URL).then(res =>{
             window.location.replace("/boekenlijst/");
         })

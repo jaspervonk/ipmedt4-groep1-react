@@ -2,7 +2,10 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 import DesktopNavItem from './DesktopNavItem';
-import DesktopHulpBoekenLijst from '../DesktopHulp/DesktopHulpBoekenlijst';
+import HulpBoekenLijst from '../MobileHulp/HulpBoekenlijst';
+import HulpBibliotheek from '../MobileHulp/HulpBibliotheek';
+import HulpBoekenkast from '../MobileHulp/HulpBoekenkast';
+import HulpWinkel from '../MobileHulp/HulpWinkel';
 
 
 import '../App.css';
@@ -35,11 +38,23 @@ class DesktopNav extends React.Component {
                   </section>
                   <section id="js--myModal" className="desktopNav__modal">
                       <section className="desktopNav__modal__content">
-                          <figure className="close">&times;</figure>
+                          <figure className="close desktop__close">&times;</figure>
                           <section className="desktopNav__modal__content__onderdelen">
                               <section className="desktopNav__modal__content__onderdelen__onderdeel">
-                                  {/* Hier komt per onderdeel alle hulpmiddelen */}
-                                  <DesktopHulpBoekenLijst />
+                                  <h2 className="hulp__section__keuze__boekenlijst__h2">Mijn Boekenlijst</h2>
+                                  <HulpBoekenLijst />
+                              </section>
+                              <section className="desktopNav__modal__content__onderdelen__onderdeel">
+                                  <h2 className="hulp__section__keuze__bibliotheek__h2">Bibliotheek</h2>
+                                  <HulpBibliotheek />
+                              </section>
+                              <section className="desktopNav__modal__content__onderdelen__onderdeel">
+                                  <h2 className="hulp__section__keuze__boekenkast__h2">Boekenkast</h2>
+                                  <HulpBoekenkast />
+                              </section>
+                              <section className="desktopNav__modal__content__onderdelen__onderdeel">
+                                  <h2 className="hulp__section__keuze__winkel__h2">Winkel</h2>
+                                  <HulpWinkel />
                               </section>
                               {/* Hieronder komen de andere secties */}
                           </section>

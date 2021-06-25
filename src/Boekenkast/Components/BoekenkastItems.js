@@ -17,7 +17,7 @@ class BoekenkastItems extends React.Component{
 
   updateItem = (slot, item_id) => {
     this.togglePopup(slot);
-    const BASE_URL = "http://localhost:8000/api/boekenkast/update/item/";
+    const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/boekenkast/update/item/";
     axios.put(BASE_URL +  this.props.user_id, {"slot": slot, "item_id": item_id, _method: 'patch'})
       .then(res => {
         this.props.refreshBoekenkast();

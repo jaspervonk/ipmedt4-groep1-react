@@ -82,7 +82,10 @@ section.desktopNav {
     border-radius: 1.2rem;
     margin: auto;
     padding: 2rem;
-    width: 80%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .desktopNav__modal__content p{
@@ -90,11 +93,14 @@ section.desktopNav {
     font-size: 1.5rem;
 }
 
-.close {
+.desktop__close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
+    top: 15%;
+    right: 35%;
 }
 
 .close:hover,

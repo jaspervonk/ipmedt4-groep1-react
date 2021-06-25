@@ -20,7 +20,7 @@ class Boekenkast extends React.Component{
   }
 
   componentDidMount() {
-    const BASE_URL = "http://localhost:8000/api/boekenkast/";
+    const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/boekenkast/";
     axios.get(BASE_URL + this.props.user_id).then(res => {
       this.setState({
         boekenkast: res.data.boekenkast,
@@ -34,7 +34,7 @@ class Boekenkast extends React.Component{
   }
 
   refreshBoekenkast = () => {
-    const BASE_URL = "http://localhost:8000/api/boekenkast/";
+    const BASE_URL = "https://warm-escarpment-39872.herokuapp.com/api/boekenkast/";
     axios.get(BASE_URL + this.props.user_id).then(res => {
       this.setState({
         boekenkast: res.data.boekenkast,

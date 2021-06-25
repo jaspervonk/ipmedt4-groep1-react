@@ -15,7 +15,7 @@ class Boekenlijst extends React.Component {
 
     //informatie ophalen voor de boekcards
     componentDidMount() {
-        const BASE_URL = 'http://127.0.0.1:8000/api/boekenlijst/'
+        const BASE_URL = 'https://warm-escarpment-39872.herokuapp.com/api/boekenlijst/'
         axios.get(BASE_URL + this.props.user_id).then(res =>{
             console.log(res.data);
             this.setState({

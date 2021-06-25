@@ -39,7 +39,7 @@ export default class WelkomButtonList extends React.Component {
 
     axios.defaults.headers.post['header1'] = 'value'
 
-    axios.post("http://127.0.0.1:8000/api/user/create", userObject, config)
+    axios.post("https://warm-escarpment-39872.herokuapp.com/api/user/create", userObject, config)
       .then((res) => {
         console.log(res.data);
       }).catch((error) => {

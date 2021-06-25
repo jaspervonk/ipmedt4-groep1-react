@@ -59,6 +59,48 @@
     line-height: 2.4rem;
 }
 
+.bookExtra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+}
+
+.bookExtra__video__title, .bookExtra__mainchar__title{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bookExtra__video__frame{
+    width: 90vw;
+    height: 60vh;
+}
+
+.bookExtra__mainchar{
+    width: 90vw;
+    background: var(--primary-color);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.bookExtra__mainchar__image{
+    max-width: 20rem;
+    align-self: center;
+}
+
+.bookExtra__mainchar__image:hover{
+    cursor: pointer;
+}
+
+.bookExtra__mainchar__description{
+    font-size: 1.6rem;
+}
+
+
+
 /*------popup-------------*/
 .u-overlay{
     top: 0;
@@ -80,22 +122,35 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--secondary-color);
+    background-color: var(--background-color);
     padding: 5rem 1rem;
     width: 70vw;
     border-radius: 2rem;
-    border: .2rem solid var(--tertiary-color);
+    border: .3rem solid var(--tertiary-color);
     gap: 2rem;
     z-index: 3;
 }
 
-.bibliotheek__popup__buttonsection > button{
-    margin: 2rem;
+.bibliotheek__popup__close-button{
+    margin: 1rem;
+}
+
+.bibliotheek__popup__buttonsection{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .bibliotheek__popup__title{
     font-size: 2rem;
     margin: 0 auto;
+    margin-right: 6rem;
+}
+
+.bibliotheek__popup__buttonsection__button{
+    font-size: 1.6rem;
 }
 
 @media(min-width: 900px){
@@ -128,6 +183,35 @@
         line-height: 2.4rem;
     }
 
+    .bookExtra__video__frame{
+        width: 65vw;
+        height: 80vh;
+    }
+
+    .bookExtra__mainchar{
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 3.5vw;
+        align-items: flex-start;
+        align-self: flex-start;
+        background: var(--primary-color);
+        border-radius: 2rem;
+        padding: 2rem;
+    }
+
+    .bookExtra__video__title, .bookExtra__mainchar__title{
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .bookExtra__mainchar__description{
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+        letter-spacing: .1rem;
+    }
+
     /*------popup-------------*/
     .bibliotheek__popup{
         display: flex;
@@ -135,7 +219,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: var(--secondary-color);
         padding: 5rem;
         border-radius: 2rem;
         border: .2rem solid var(--tertiary-color);
@@ -146,6 +229,13 @@
         flex-direction: row;
         gap: 2rem;
         margin-top: 2rem;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: 10rem;
+    }
+
+    .bibliotheek__popup__buttonsection__button{
+        font-size: 2rem;
     }
 
     /*------grid-----------------*/
@@ -187,4 +277,6 @@
         align-self: center;
 
     }
+
+    
 }
