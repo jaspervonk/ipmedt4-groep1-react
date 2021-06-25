@@ -54,22 +54,23 @@ class BoekDetail extends React.Component {
             this.setState({
                 gelezenHoofdstukken: res.data.gelezenHoofdstukken,
                 gelezenHoofdstukkenTeller: res.data.gelezenHoofdstukken.length,
+            }, () => {
+                setTimeout(() => {
+                    for(var i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
+                        document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
+                        if(document.getElementById(i + "K")){
+                            document.getElementById(i + "K").innerHTML="uitdaging";
+                        }
+                    }
+                }, 1000);
             })
-
-            //gelezen hoofdstukken die gelijk zijn aan hoofdstukken, afvinken
-            for(var i = 0; i < this.state.gelezenHoofdstukkenTeller; i++){
-                document.getElementById(this.state.gelezenHoofdstukken[i].hoofdstuk_id).checked=true;
-                if(document.getElementById(i + "K")){
-                    document.getElementById(i + "K").innerHTML="uitdaging";
-                }
-            }
         });
 
     }
 
     //afvinken van hoofdstuk update de gelezen_hoofdstukken table
     cardClicked = id => {
-        let boekId = window.location.pathname.split('/')[3];
+        var boekId = window.location.pathname.split('/')[3];
         var AFVINKEN_URL = 'https://warm-escarpment-39872.herokuapp.com/api/hoofdstukken/gelezen/' + boekId + "/" + id + "/" + this.props.user_id;
 
         //check=true, is toevoegen, check=false, is verwijderen
